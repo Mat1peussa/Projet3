@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'roboto';
+    src: url('font/roboto_regular_macroman/specimen_files');
+ }
+ 
+ 
+ 
+  body{
+    margin: 0;
+  }
+ 
+  a{
+    text-decoration: none;
+    color: black;
+  }
+ 
+  a:hover{
+  color: rgb(61, 209, 209);
+  }
+ 
+  h1{
+    margin-top: 20px;
+    font-family: 'Shrikhand', cursive;
+ }
+ 
+ h2{
+    font-size: medium;
+    font-family: roboto, sans-serif;
+    font-weight: 100;
+    margin-left: 20px;
+    text-decoration: 5px underline #99E2D0 ;
+    
+ }
+ 
+  /*header*/
+ 
+  header {
+     width: 100%;
+     display: flex;
+     justify-content:center
+  }
+ 
+  #logo img {
+     margin-top: 10px;
+     width:150px ;
+  }
+ 
+  header .header{
+     width: 100%;
+     display: flex;
+     justify-content: flex-start;
+ 
+  }
+ 
+  .retour_accueil {
+    display: none;
+  }
+ 
+  #arrow_left {
+     margin-left: 20px;
+     margin-right: 20px;
+     width: 20%;
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+     font-size: large;
+  }
+ 
+  .twitter{
+    display: none;
+  }
+ 
+  /*Main*/
+ 
+   .photo img{
+    
+     width: 100%;
+     height: 250px;
+     object-fit: cover;
+ }
+ 
+  .menu{
+    border-radius:30px 30px 0 0px;
+    background-color: rgb(247, 241, 241);
+    margin-top:0
+ }
+ 
+ .menu .title{
+    display: flex;
+    justify-content: space-around;
+ }
+ 
+ .heart{
+    display: flex;
+    align-items: center;
+ }
+ 
+ .entree{
+    display: flex;
+    flex-direction:column;
+ }
+ 
+ .cards{
+    width: 90%;
+    height: 70px;
+    background-color: white;
+    margin-left: 5%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+ }
+ 
+ 
+ 
+ 
+ @media all and (min-device-width:415px) 
+ {
+ 
+    header .header {
+       justify-content: space-between;
+       margin-right: 10%;
+       margin-left: 10%;
+    }
+ 
+    #arrow_left{
+       display: none;
+    }
+ 
+    .retour_accueil{
+       display: flex;
+       align-items: center;
+       margin-right: 20px;
+    }
+ 
+   
+ 
+    .twitter{
+       display: flex;
+       align-items: center;
+       font-size: xx-large;
+    }
+ 
+   
+ 
+   
+ 
+    
+ }
