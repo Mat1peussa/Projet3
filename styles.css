@@ -9,8 +9,10 @@ a {
   text-decoration: none;
   color: black;
 }
-a a:hover {
-  color: 2px #99E2D0 solid;
+
+a:hover {
+ color: #99E2D0;
+ 
 }
 
 h1 {
@@ -24,6 +26,16 @@ h2 {
   font-weight: 100;
   -webkit-text-decoration: 5px underline #99E2D0;
           text-decoration: 5px underline #99E2D0;
+          
+          
+}
+
+h3{
+  margin: 0;
+  font-family: "Shrikhand", cursive;
+  color: white;
+  font-weight: 100;
+  font-size: small;
 }
 
 span{
@@ -86,10 +98,13 @@ header .header {
 
 
 .menu {
+
   position: relative;
   border-radius: 30px 30px 0 0px;
   background-color: rgb(247, 241, 241);
   margin-top: -70px;
+  padding-bottom: 70px;
+  
 }
 
 .block_menu {
@@ -115,7 +130,7 @@ header .header {
 }
 
 .cards {
-  height: 70px;
+  height: auto;
   width: 100%;
   background-color: white;
   border-radius: 15px;
@@ -124,6 +139,10 @@ header .header {
 
 .name {
   padding: 10px 0 0 10px;
+}
+
+.name span {
+  width: 80%;
 }
 
 .details_price{
@@ -143,6 +162,63 @@ header .header {
   width: 50%;
   margin-left: 25%;
 }
+
+/*Footer*/
+
+footer{
+  background-color: rgb(54, 54, 54);
+  padding-bottom: 20px;
+}
+
+.logo h3{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left:  20px;
+}
+
+
+
+.proposer {
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  margin-left: 20px;
+  font-size: small;
+}
+
+.proposer span{
+  padding-left: 10px;
+}
+
+.partenaire{
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-size: small;
+}
+
+.partenaire span{
+  padding-left: 5px;
+}
+
+.mentions{
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: small;
+  color: white;
+}
+
+.contact a{
+  font-family: "Roboto", sans-serif; 
+  font-weight: 700;
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: small;
+  color: white;
+}
+
 
 @media all and (min-device-width: 415px) {
   header .header {
@@ -180,10 +256,58 @@ header .header {
   .cards {
     margin-right: 40px;
     width: 30%;
-    height: 300px;
+    height: auto;
   }
 
+  .name{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
   }
+
+  .name span{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .details_price{
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .details_price p{
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .details_price span{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .logo{
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo h3{
+    font-size: x-large;
+  }
+
+  .text_footer {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  
 
   
   
