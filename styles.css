@@ -1,6 +1,5 @@
 /*@import "./utils/_variables.scss";
 @import "./layouts/_form.scss";*/
-
 body {
   margin: 0;
 }
@@ -11,8 +10,7 @@ a {
 }
 
 a:hover {
- color: #99E2D0;
- 
+  color: #99E2D0;
 }
 
 h1 {
@@ -24,13 +22,10 @@ h2 {
   font-family: "Roboto", sans-serif;
   font-size: medium;
   font-weight: 100;
-  -webkit-text-decoration: 5px underline #99E2D0;
-          text-decoration: 5px underline #99E2D0;
-          
-          
+  margin: 0;
 }
 
-h3{
+h3 {
   margin: 0;
   font-family: "Shrikhand", cursive;
   color: white;
@@ -38,19 +33,17 @@ h3{
   font-size: small;
 }
 
-span{
+span {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   display: flex;
   align-items: center;
 }
 
-p{
+p {
   font-family: "Roboto", sans-serif;
   font-size: small;
 }
-
-
 
 /*header*/
 header {
@@ -93,26 +86,22 @@ header .header {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-
 .menu {
-
   position: relative;
   border-radius: 30px 30px 0 0px;
   background-color: rgb(247, 241, 241);
   margin-top: -70px;
   padding-bottom: 70px;
-  
 }
-
-.block_menu {
+.menu .block_menu {
   width: 90%;
-  margin-left: 5%;
+  padding-left: 5%;
 }
 
-.menu .title{
+.menu .title {
   display: flex;
   justify-content: space-around;
   margin-left: -25px;
@@ -124,59 +113,106 @@ header .header {
   font-size: x-large;
 }
 
+#trait_dessous {
+  border-top: 3px #99E2D0 solid;
+  width: 40px;
+  margin-top: 5px;
+  padding-bottom: 20px;
+}
+
 .entree {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
-.cards {
-  height: auto;
+.block_cards {
+  margin-bottom: 15px;
+  display: flex;
   width: 100%;
+}
+.block_cards .cards {
+  height: auto;
+  width: 90%;
   background-color: white;
   border-radius: 15px;
-  margin-bottom: 15px;
+}
+.block_cards .cards:hover + .box {
+  transform: scaleX(1);
+}
+.block_cards .cards:hover + .valid_rotate {
+  transform: rotate(0deg);
+}
+.block_cards .cards .cards_entree {
+  width: 100%;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #99E2D0;
+  width: 20%;
+  height: 69px;
+  border-radius: 0 15px 15px 0;
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  transition: transform 400ms;
+}
+.box .valid_rotate {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transform: rotate(360deg);
+  transition: transform 500ms ease-in;
+}
+.box .valid_rotate .fa-check::before {
+  color: #99E2D0;
 }
 
 .name {
   padding: 10px 0 0 10px;
 }
-
-.name span {
+.name .span {
   width: 80%;
 }
 
-.details_price{
+.details_price {
   display: flex;
   padding-left: 10px;
   justify-content: space-between;
   width: 90%;
 }
 
-.commander{
+.commander {
   margin-top: 40px;
-  display:flex ;
+  display: flex;
   justify-content: center;
-  border: 1px #FF79DA solid;
   background-color: #FF79DA;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
   border-radius: 25px;
   width: 50%;
+  height: 40px;
   margin-left: 25%;
 }
 
 /*Footer*/
-
-footer{
+footer {
   background-color: rgb(54, 54, 54);
   padding-bottom: 20px;
 }
 
-.logo h3{
+.logo h3 {
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-left:  20px;
+  margin-left: 20px;
 }
-
-
 
 .proposer {
   display: flex;
@@ -186,11 +222,11 @@ footer{
   font-size: small;
 }
 
-.proposer span{
+.proposer span {
   padding-left: 10px;
 }
 
-.partenaire{
+.partenaire {
   display: flex;
   justify-content: flex-start;
   color: white;
@@ -199,26 +235,25 @@ footer{
   font-size: small;
 }
 
-.partenaire span{
+.partenaire span {
   padding-left: 5px;
 }
 
-.mentions{
+.mentions {
   margin-top: 5px;
   margin-left: 20px;
   font-size: small;
   color: white;
 }
 
-.contact a{
-  font-family: "Roboto", sans-serif; 
+.contact a {
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   margin-top: 5px;
   margin-left: 20px;
   font-size: small;
   color: white;
 }
-
 
 @media all and (min-device-width: 415px) {
   header .header {
@@ -240,78 +275,56 @@ footer{
     font-size: xx-large;
   }
 }
-
-  @media all and (min-device-width: 992px ) {
-
-
-  .menu .title{
+@media all and (min-device-width: 992px) {
+  .menu .title {
     font-size: x-large;
   }
-  
-
   .block_cards {
     display: flex;
   }
-
   .cards {
     margin-right: 40px;
     width: 30%;
     height: auto;
   }
-
-  .name{
+  .name {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     font-size: x-large;
   }
-
-  .name span{
+  .name span {
     width: 100%;
     justify-content: center;
   }
-
-  .details_price{
+  .details_price {
     flex-direction: column;
     margin-top: 20px;
   }
-
-  .details_price p{
+  .details_price p {
     font-size: x-large;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
-  .details_price span{
+  .details_price span {
     margin-top: 20px;
     padding-bottom: 20px;
     font-size: xx-large;
     display: flex;
     justify-content: center;
   }
-
-  footer .logo{
+  footer .logo {
     display: flex;
     justify-content: center;
   }
-
-  .logo h3{
+  .logo h3 {
     font-size: x-large;
   }
-
   .text_footer {
     padding-top: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
-
-  
-
-  
-  
-    
-
-  
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
