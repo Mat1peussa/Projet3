@@ -113,6 +113,12 @@ header .header {
   font-size: x-large;
 }
 
+.entree {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 #trait_dessous {
   border-top: 3px #99E2D0 solid;
   width: 40px;
@@ -120,75 +126,116 @@ header .header {
   padding-bottom: 20px;
 }
 
-.entree {
+.blockcards {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
-
-.block_cards {
-  margin-bottom: 15px;
-  display: flex;
+.blockcards .cards {
   width: 100%;
-}
-.block_cards .cards {
-  height: auto;
-  width: 90%;
+  height: 70px;
   background-color: white;
   border-radius: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
 }
-.block_cards .cards:hover + .box {
+.blockcards .cards:hover + .greenbox {
   transform: scaleX(1);
 }
-.block_cards .cards:hover + .valid_rotate {
+.blockcards .cards:hover + .whitecircle {
   transform: rotate(0deg);
 }
-.block_cards .cards .cards_entree {
+.blockcards .textcards {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
-.box {
+.blockcards .textcards .name {
+  padding: 10px 0 0 10px;
+}
+.blockcards .textcards .details_price {
+  width: 100%;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.blockcards .textcards .details_price .price {
+  padding-right: 10px;
+  display: flex;
+}
+.blockcards .greenbox {
+  background-color: #99E2D0;
+  width: 70px;
+  height: 70px;
+  border-radius: 0 15px 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  background-color: #99E2D0;
-  width: 20%;
-  height: 69px;
-  border-radius: 0 15px 15px 0;
-  transform-origin: 0% 50%;
+  transform-origin: right;
   transform: scaleX(0);
-  transition: transform 400ms;
+  transition: transform 400ms ease-in-out;
 }
-.box .valid_rotate {
+.blockcards .greenbox .whitecircle {
+  background-color: white;
   width: 20px;
   height: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: white;
+  justify-content: center;
   transform: rotate(360deg);
-  transition: transform 500ms ease-in;
+  transition: transform 400ms ease-in;
 }
-.box .valid_rotate .fa-check::before {
+.blockcards .greenbox .whitecircle .fa-check:before {
   color: #99E2D0;
 }
 
-.name {
-  padding: 10px 0 0 10px;
-}
-.name .span {
-  width: 80%;
-}
+/* .cards{
+   margin-bottom: 15px;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: auto;
+   background-color: white;
+   border-radius: 15px;
+      .cards_entree{
+        position: absolute;
+             .name {
+                padding: 10px 0 0 10px;
+                 .span {
+                   width: 80%;
+                 }  
+             }     
+             .details_price{
+                display: flex;
+                padding-left: 10px;
+                justify-content: space-between;
+                width: 90%;
+                 .price{
+                   display: flex;
+                 }
+             }
+           }     
+     }
+     .box {
+       margin: 0;
+       background-color: $tertiary-color;
+       width:20%;
+       height: 69px;
+       border-radius: 0 15px 15px 0;
+       z-index: 2;
+        .valid_rotate{
+          width:20px;
+          height: 20px;
+          border-radius: 8px;
+          background-color: white;
+           .fa-check::before{
+              color: $tertiary-color;
+           }
+        }
+     }
 
-.details_price {
-  display: flex;
-  padding-left: 10px;
-  justify-content: space-between;
-  width: 90%;
-}
-
+ */
 .commander {
   margin-top: 40px;
   display: flex;
