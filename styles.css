@@ -10,7 +10,7 @@ a {
 }
 
 a:hover {
-  color: #99E2D0;
+  background: linear-gradient(#9356DC, #FF79DA);
 }
 
 h1 {
@@ -107,10 +107,29 @@ header .header {
   margin-left: -25px;
 }
 
-.heart {
-  display: flex;
-  align-items: center;
-  font-size: x-large;
+.coeur_vide {
+  padding-top: 21px;
+  width: 28px;
+  height: 28px;
+  stroke: black;
+  fill: transparent;
+}
+
+.coeur_plein {
+  position: absolute;
+  fill: transparent;
+  padding-top: 20px;
+  width: 30px;
+  height: 30px;
+  margin-left: -30px;
+  transform-origin: bottom;
+  transform: scaleX(1);
+  transition: transform 4000ms;
+}
+
+.coeur_plein:hover {
+  fill: #FF79DA;
+  transform: scaleX(0);
 }
 
 .entree {
@@ -160,6 +179,7 @@ header .header {
   justify-content: space-between;
 }
 .blockcards .textcards .details_price .price {
+  text-overflow: 100px;
   padding-right: 10px;
   display: flex;
 }
@@ -173,7 +193,7 @@ header .header {
   align-items: center;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 400ms ease-in-out;
+  transition: transform 2000ms ease-in-out;
 }
 .blockcards .greenbox .whitecircle {
   background-color: white;

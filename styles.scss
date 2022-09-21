@@ -2,6 +2,8 @@
 /*@import "./utils/_variables.scss";
 @import "./layouts/_form.scss";*/
 
+
+
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
@@ -9,6 +11,12 @@ $tertiary-color: #99E2D0;
 body {
     margin: 0;
   }
+
+  
+
+
+            
+ 
   
   a {
     text-decoration: none;
@@ -16,8 +24,7 @@ body {
   }
   
   a:hover {
-   color: $tertiary-color;
-   
+   background: linear-gradient($primary-color, $secondary-color);
   }
   
   h1 {
@@ -116,13 +123,43 @@ body {
     justify-content: space-around;
     margin-left: -25px;
       
-}
-  
-  .heart {
-    display: flex;
-    align-items: center;
-    font-size: x-large;
   }
+
+  svg:hover{
+  
+  }
+
+  .coeur_vide{
+    padding-top: 21px;
+    width: 28px;
+    height: 28px;
+    stroke: black;
+    fill: transparent;
+  }
+
+  .coeur_plein{
+    position: absolute;
+    fill: transparent;
+    padding-top: 20px;
+    width: 30px;
+    height: 30px;
+    margin-left: -30px;
+    transform-origin: bottom;
+    transform: scaleX(1);
+    transition: transform 4000ms;
+  }
+
+  .coeur_plein:hover{
+    fill: #FF79DA;
+    transform: scaleX(0);
+  }
+  
+
+  
+
+  
+      
+  
 
   .entree{
     display: flex;
@@ -148,9 +185,10 @@ body {
         margin-bottom: 15px;
         display: flex;
         justify-content: space-between;
-        &:hover + .greenbox {
+        &:hover +.greenbox {
             transform: scaleX(1);
           }
+        
         &:hover + .whitecircle{
             transform: rotate(0deg);
           }
@@ -168,6 +206,7 @@ body {
                 display: flex;
                 justify-content: space-between;
                   .price{
+                    text-overflow: 100px;
                     padding-right: 10px;
                     display: flex;
                   }
@@ -183,7 +222,7 @@ body {
             align-items: center;
             transform-origin: right ;
             transform: scaleX(0);
-            transition: transform 400ms ease-in-out;
+            transition: transform 2000ms ease-in-out;
               .whitecircle{
                background-color: white;
                width: 20px;
