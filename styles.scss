@@ -8,16 +8,11 @@ $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 
-body {
+
+  body {
     margin: 0;
   }
 
-  
-
-
-            
- 
-  
   a {
     text-decoration: none;
     color: black;
@@ -125,49 +120,39 @@ body {
       
   }
 
-  svg:hover{
   
-  }
 
   .coeur_vide{
     padding-top: 21px;
-    width: 28px;
-    height: 28px;
+    width: 27px;
+    height: 27px;
     stroke: black;
     fill: transparent;
-  }
-
-  .coeur_vide:hover  .coeur_plein{
-    /*quand je survole coeur vide */
-       transform: scaleX(0);
-    /*le coeur plein vient par dessus le coeur vide*/
-    /*le coeur plein apparait progressivement par le bas*/
-
-
+      
   }
 
   .coeur_plein{
-  
+    position: absolute;
     padding-top: 20px;
     width: 30px;
     height: 30px;
     margin-left: 0px;
-    transform: scaleX(1);
-    transition: transform 4000ms;
+     /* gradient and fallback color */
+      fill: url(#my-cool-gradient) #9356DC;
   }
 
-  .coeur_plein{
-    fill: #FF79DA;
+
+  
+
+  .restaurant_card--heart:hover  .coeur_plein{ /*quand je survole coeur vide */
+       margin-right: 20px;
+  
+    /*le coeur plein vient par dessus le coeur vide*/
+    /*le coeur plein apparait progressivement par le bas*/
+}
     
-  }
   
-
   
-
-  
-      
-  
-
   .entree{
     display: flex;
     flex-direction: column;
@@ -186,6 +171,9 @@ body {
     flex-direction: column;
     
       .cards{
+        transform: scaleY(1);
+        animation-name: cards_down;
+        animation-duration: 1000ms;
         width: 100%;
         height: 70px;
         background-color: white;
@@ -205,6 +193,7 @@ body {
         &:hover .price{
             transform: translateX(-50px);
         }
+
         }
           .textcards{
              width: 100%;
@@ -253,6 +242,17 @@ body {
                  }
               }
           }
+      }
+
+      @keyframes cards_down {
+         0%{
+          transform-origin: bottom;
+          transform: scaleY(0);
+          opacity: 0;
+         }
+         100%{
+          transform: scaleY(1);
+         }
       }
   
 
