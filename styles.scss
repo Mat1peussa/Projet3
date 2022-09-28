@@ -53,9 +53,8 @@ $anim-delay: $anim-dur / $num-cards;
   
   p{
     font-family: "Roboto", sans-serif;
-    font-size: small;
-    width: 250px;
-    
+    font-size:12px;
+    width: 240px;
   }
   
   
@@ -199,10 +198,8 @@ $anim-delay: $anim-dur / $num-cards;
             transform: rotate(0deg);
           }
 
-    
-
         &:hover .price{
-            transform: translateX(-50px);
+            transform: translateX(-70px);
         }
 
         }
@@ -210,17 +207,18 @@ $anim-delay: $anim-dur / $num-cards;
              width: 100%;
              display: flex; 
              flex-direction: column;
-             
+             position: absolute;
               .name{
-                padding: 10px 0 0 10px ;
+                padding: 10px 0 0 15px ;
               }
               .details_price{
-                width: 60%;
+                width: 100%;
                 display: flex;
                 justify-content: space-between;
                 padding-left: 15px;
-                  .price{
-                    margin-left: 20%;
+                
+                 .price{
+                    margin-right: 30px;
                     display: flex;
                     transition: transform 1000ms ease-in-out;
                     
@@ -228,6 +226,7 @@ $anim-delay: $anim-dur / $num-cards;
               }
           } 
           .greenbox{
+            position: relative;
             background-color: $tertiary-color;
             width: 70px;
             height: 70px;
@@ -256,17 +255,6 @@ $anim-delay: $anim-dur / $num-cards;
           }
       }
 
-      .cards--2{
-        animation-delay: 3s;
-        
-      }
-
-      .cards--3{
-        animation-delay: 5s;
-        
-      }
-
-      
       @keyframes cards_down {
          0%{
           transform: scaleY(0);
@@ -279,60 +267,6 @@ $anim-delay: $anim-dur / $num-cards;
          }
       }
 
-      
-        
-      
-  
-
- /* .cards{
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    background-color: white;
-    border-radius: 15px;
-       .cards_entree{
-         position: absolute;
-              .name {
-                 padding: 10px 0 0 10px;
-                  .span {
-                    width: 80%;
-                  }  
-              }     
-              .details_price{
-                 display: flex;
-                 padding-left: 10px;
-                 justify-content: space-between;
-                 width: 90%;
-                  .price{
-                    display: flex;
-                  }
-              }
-            }     
-      }
-      .box {
-        margin: 0;
-        background-color: $tertiary-color;
-        width:20%;
-        height: 69px;
-        border-radius: 0 15px 15px 0;
-        z-index: 2;
-         .valid_rotate{
-           width:20px;
-           height: 20px;
-           border-radius: 8px;
-           background-color: white;
-            .fa-check::before{
-               color: $tertiary-color;
-            }
-         }
-      }
-  
-  */
-
-    
-  
   .commander{
     margin-top: 40px;
     display:flex ;
