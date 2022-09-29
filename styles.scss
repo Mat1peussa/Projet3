@@ -9,6 +9,7 @@ $num-cards: 10;
 $anim-dur: 2000ms;
 $anim-delay: $anim-dur / $num-cards;
 
+
   body {
     margin: 0;
   }
@@ -75,9 +76,9 @@ $anim-delay: $anim-dur / $num-cards;
   }
 
   #logo_accueil {
+    box-shadow: 5px 10px red;
     display:flex;
     justify-content: center;
-    box-shadow: 2px 2px 4px 0 rgba(234,234,234,255);
     height: 50px;
       img{
     margin-top: 10px;
@@ -159,8 +160,12 @@ $anim-delay: $anim-dur / $num-cards;
           height: 75px;
           background: rgba(246,246,246,255) ;
           border-radius: 20px;
-          box-shadow: 1px 10px 15px 2px rgb(207, 207, 207);
+          box-shadow : 1px 10px 15px 2px rgb(207, 207, 207) ;
           margin-bottom: 20px;
+          &:hover {
+            background: #ecdcff;
+            box-shadow : 1px 10px 15px 2px rgb(129, 129, 129);
+          }
             
               .chiffre_cercle{
                 display: flex;
@@ -201,7 +206,10 @@ $anim-delay: $anim-dur / $num-cards;
                 text-shadow: 0 0 black;
               }
         }
-    }
+    
+  }
+
+
 
 .restaurants{
   margin: 0;
@@ -338,40 +346,43 @@ $anim-delay: $anim-dur / $num-cards;
       
   }
 
-  
+  .restaurant_card--heart{
+    transform: scaleX(1);
+      &:hover svg.coeur_plein{
+        transform: scaleY(1);
+      }
+  }
 
-  .coeur_vide{
+  svg.coeur_vide{
     padding-top: 21px;
     width: 27px;
     height: 27px;
     stroke: black;
     fill: transparent;
-      
+    
   }
-
-  .coeur_plein{
+    
+  svg.coeur_plein{
     position: absolute;
     padding-top: 20px;
     width: 30px;
     height: 30px;
-    margin-left: 0px;
+    margin-left: -30px;
      /* gradient and fallback color */
       fill: url(#my-cool-gradient) #9356DC;
-  }
-
+      transform-origin: bottom ;
+      transform: scaleY(0);
+      transition: transform 800ms ease-in-out;
+    }
 
   
-
-  .restaurant_card--heart:hover  .coeur_plein{ /*quand je survole coeur vide */
-       margin-right: 20px;
-  
-    /*le coeur plein vient par dessus le coeur vide*/
-    /*le coeur plein apparait progressivement par le bas*/
-}
     
+
   
+
   
-  .entree{
+
+  .tree{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -397,30 +408,36 @@ $anim-delay: $anim-dur / $num-cards;
         background-color: white;
         border-radius: 15px;
         margin-bottom: 15px;
-        box-shadow: 0px black ;
         overflow: hidden;
         display: flex;
         justify-content: flex-end;
+        box-shadow : 1px 10px 15px 2px rgb(207, 207, 207);
         transform: scaleY(1);
         animation: cards_down $anim-dur;
-        @for $i from 1 through $num-cards {
-          &--#{$i} {
-           animation-delay: $anim-delay * $i;
-      }
-    }
-        &:hover .greenbox {
-            transform: scaleX(1);
+          @for $i from 1 through $num-cards {
+            &--#{$i} {
+             animation-delay: $anim-delay * $i;
+               &:hover{
+                box-shadow : 1px 10px 15px 2px rgb(129, 129, 129)
+               }
+            }
           }
+            &:hover .greenbox {
+              transform: scaleX(1);
+            }
         
-        &:hover .whitecircle{
-            transform: rotate(0deg);
-          }
+            &:hover .whitecircle{
+              transform: rotate(0deg);
+            }
 
-        &:hover .price{
-            transform: translateX(-70px);
-        }
+            &:hover .price{
+              transform: translateX(-70px);
+            }
 
-        }
+            
+
+      }
+
           .textcards{
              width: 100%;
              height: auto;
