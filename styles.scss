@@ -76,7 +76,7 @@ $anim-delay: $anim-dur / $num-cards;
   }
 
   #logo_accueil {
-    box-shadow: 5px 10px red;
+    box-shadow: 10px 10px red;
     display:flex;
     justify-content: center;
     height: 50px;
@@ -354,6 +354,7 @@ $anim-delay: $anim-dur / $num-cards;
   }
 
   svg.coeur_vide{
+    overflow: hidden;
     padding-top: 21px;
     width: 27px;
     height: 27px;
@@ -363,16 +364,17 @@ $anim-delay: $anim-dur / $num-cards;
   }
     
   svg.coeur_plein{
+    background-color: rgba(246,246,246,255) ;
     position: absolute;
     padding-top: 20px;
     width: 30px;
     height: 30px;
-    margin-left: -30px;
+    margin-left: -29px;
      /* gradient and fallback color */
       fill: url(#my-cool-gradient) #9356DC;
-      transform-origin: bottom ;
+     /* transform-origin: bottom ;*/
       transform: scaleY(0);
-      transition: transform 800ms ease-in-out;
+      transition: transform 200ms ease-in-out;
     }
 
   
