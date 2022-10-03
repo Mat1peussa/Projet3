@@ -68,11 +68,40 @@ $anim-delay: $anim-dur / $num-cards;
   }
   /*Page d'accueil*/
 
+  .page_accueil{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    opacity: 1;
+    animation-delay: 3s;
+    animation-name: load_accueil;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 0;
+  }
+
+  @keyframes load_accueil {
+    0%{
+      display: none;
+      opacity:0;
+      z-index: 2000;
+    }
+    100%{
+      display: block;
+      opacity: 1;
+      z-index: 2000;
+    }
+  }
+
   .header_accueil{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: white;
   }
 
   #logo_accueil {
@@ -151,6 +180,7 @@ $anim-delay: $anim-dur / $num-cards;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: white;
       .cards_accueil{
           display: flex;
           justify-content: center;
@@ -519,8 +549,79 @@ $anim-delay: $anim-dur / $num-cards;
     height: 40px;
     margin-left: 25%;
   }
-  
-  /*Footer*/
+
+  /*Spinner*/
+
+  .loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient($primary-color, $secondary-color);
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    
+
+      .loader_text{
+        display: flex;
+        flex-direction: column;
+          h1{
+            margin-bottom: 0;
+          }
+          h2{
+            display: flex;
+            justify-content: center;
+            font-weight: 900;
+          }
+      } 
+      
+      .spinner{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:200px;
+        height:200px;
+        background:transparent;
+        border:4px solid black;
+        border-radius: 50%;
+        line-height:150px;
+      }
+
+      .spinner:before{
+        content:'';
+        position:absolute;
+        top:-3px;
+        left:-3px;
+        width:100%;
+        height:100%;
+        border:3px solid $primary-color;
+        border-top:3px solid $tertiary-color;
+        border-radius:50% ;
+        animation:spinner_loader 2s linear infinite;
+      }
+
+    @keyframes spinner_loader{
+      0%{
+       transform:rotate(0deg);
+      }
+      100%{
+       transform:rotate(360deg);
+      }
+}
+
+}
+
+/*Footer*/
   
   footer{
     background-color: rgb(54, 54, 54);
