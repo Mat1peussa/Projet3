@@ -12,6 +12,7 @@ $anim-delay: $anim-dur / $num-cards;
 
   body {
     margin: 0;
+    
   }
 
   a {
@@ -30,9 +31,9 @@ $anim-delay: $anim-dur / $num-cards;
   
   h2 {
     font-family: "Roboto", sans-serif;
-    font-size: medium;
     font-weight: 100;
     margin: 0;
+    font-size: large;
   }
   
   h3{
@@ -40,15 +41,13 @@ $anim-delay: $anim-dur / $num-cards;
     font-family: "Shrikhand", cursive;
     color: white;
     font-weight: 100;
-    font-size: small;
+    
   }
 
   h4{
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     text-shadow: 0 0 black;
-    margin-left: 20px;
-  
   }
   
   span{
@@ -140,10 +139,11 @@ $anim-delay: $anim-dur / $num-cards;
     background-color: rgba(246,246,246,255) ;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    
 
       span{
         width: 200px;
-        padding-left:90px ;
         padding-top: 20px;
         text-align: center;
         display: flex;
@@ -154,7 +154,7 @@ $anim-delay: $anim-dur / $num-cards;
       }
 
       p{
-        padding-left: 20px;
+        padding-left:20px ;
         text-align: center;
         width: auto;
         font-size: medium;
@@ -172,7 +172,7 @@ $anim-delay: $anim-dur / $num-cards;
         height: 40px;
         background: linear-gradient(170deg, $secondary-color, $primary-color);
         border-radius: 20px;
-        margin: 10px 0 50px 90px ;
+        margin: 10px 0 50px 0 ;
       }
       
   }
@@ -183,7 +183,14 @@ $anim-delay: $anim-dur / $num-cards;
     align-items: center;
     width: 100%;
     background-color: white;
-      .cards_accueil{
+       h2{
+        width: 100%;
+        font-size: large;
+        font-weight: 900;
+        padding: 10px 0 20px 40px
+       }
+  
+        .cards_accueil {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -240,7 +247,7 @@ $anim-delay: $anim-dur / $num-cards;
         }
     
   }
-
+  
 
 
 .restaurants{
@@ -249,14 +256,21 @@ $anim-delay: $anim-dur / $num-cards;
   width: 100%;
   height: auto;
   background-color: rgba(246,246,246,255) ;
+  display: flex;
+  flex-direction: column;
+    h2{
+      width: 50%;
+      padding : 10px 0 20px 30px;
+      font-weight: 900;
+      font-size: large;
+    }
     .container_cards{
       width: 85%;
       height: auto;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      margin-left: 28px;
-      
+      justify-content: space-between;
+      margin-left: 7%;
         .cards_restaurants{
           background-color: white;
           border-radius: 20px;
@@ -271,14 +285,16 @@ $anim-delay: $anim-dur / $num-cards;
               flex-direction: column;
               align-items: flex-start;
               margin: 0;
+              
                 .new_green_cards{
+                
                   display: flex;
                   justify-content: center;
                   align-items: center;
                   color: rgba(0, 129, 96, 0.929);
                   position: absolute;
                   margin-top: 15px;
-                  margin-left: 60%;
+                  margin-left: 230px;
                   font-size: medium;
                   font-weight: 900;
                   font-family: "Roboto", sans-serif;
@@ -302,6 +318,7 @@ $anim-delay: $anim-dur / $num-cards;
                    justify-content: space-between;
                      .texte h4{
                       margin-bottom: 10px;
+                      padding-left: 20px;
                      }
                      .texte p{
                         margin-left: 20px;
@@ -371,12 +388,12 @@ $anim-delay: $anim-dur / $num-cards;
     }
   }
 
-  .menu .title{
-    display: flex;
-    justify-content: space-around;
-    margin-left: -25px;
-      
-  }
+  .menu 
+    .title{
+      display: flex;
+      justify-content: space-around;
+      margin-left: -25px;
+    }
 
   .restaurant_card--heart{
     transform: scaleX(1);
@@ -384,6 +401,8 @@ $anim-delay: $anim-dur / $num-cards;
         transform: scaleY(1);
       }
   }
+
+  
 
   svg.coeur_vide{
     overflow: hidden;
@@ -428,7 +447,6 @@ $anim-delay: $anim-dur / $num-cards;
         background-color:white;
         border-radius: 15px;
         margin-bottom: 15px;
-        overflow: hidden;
         display: flex;
         justify-content: flex-end;
         box-shadow : 1px 10px 15px 2px rgb(207, 207, 207);
@@ -455,18 +473,13 @@ $anim-delay: $anim-dur / $num-cards;
               transform: translateX(-70px);
             }
 
-           /* &:hover .textcards .details_price .details p{
+            &:hover .name p {
               overflow: hidden;
-              text-overflow: ellipsis;
-              
             }
 
-            &:hover .textcards .name span{
+            &:hover .details_price .details p{
               overflow: hidden;
-              text-overflow: ellipsis;
-              
-            }*/
-
+            }
       }
 
           .textcards{
@@ -475,23 +488,30 @@ $anim-delay: $anim-dur / $num-cards;
              display: flex; 
              flex-direction: column;
              position: absolute;
-             white-space: nowrap;
-             overflow: hidden;
-             text-overflow: ellipsis;
-              .name span{
-                padding: 10px 0 0 15px;
+             
+             
+              .name p{
+                font-weight: 700;
+                font-size:medium;
+                padding-left: 15px;
+                margin-bottom: 0;
                 width: 200px;
+                white-space: nowrap; 
+                overflow: visible ;
+                text-overflow: ellipsis ;
               }
               .details_price{
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 padding-left: 15px;
+                
                  .details p{
-                  border: 1px solid black;
                   width: 200px;
-                   
-                 
+                  white-space: nowrap; 
+                  overflow: visible;
+                  text-overflow: ellipsis;
+                
                  }
                 
                  .price{
@@ -698,7 +718,22 @@ $anim-delay: $anim-dur / $num-cards;
   }
   
     @media all and (min-device-width: 992px ) {
-  
+    
+    .logo_accueil {
+      height: 80px;
+       img{
+        padding-top: 10px;
+        width: 250px;
+        height: 50px;
+       }
+    }
+
+    #localisation_accueil{
+      height: 80px;
+       span{
+        font-size: x-large;
+       }
+    }
   
     .menu .title{
       font-size: x-large;
@@ -708,54 +743,92 @@ $anim-delay: $anim-dur / $num-cards;
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
+        span{
+          font-size: x-large;
+        }
+        p{
+          font-size: larger;
+        }
         a{
           margin-top: 50px;
+        
     }
   }
 
     nav {
-      flex-direction: row;
-      justify-content: space-around;
+     /* flex-direction: row;*/
       padding-top: 20px;
+        h2{
+          width: 100%;
+          font-size: x-large;
+          padding-left: 70px;
         }
-    
-     h4{
-      padding-bottom: 20px;
-      align-items: center;
-      font-size: x-large;
     }
 
-    .restaurants h4{
-      margin-left: 2.8%;
-    }
     
 
     nav .cards_accueil{
-      width: 25%;
+      width: 80%;
+      height: auto;
+       .chiffre_cercle{
+        font-size: x-large;
+        height: 50px;
+        width: 50px;
+       }
+       i.fa-solid.fa-mobile-screen{
+        font-size: 50px;
+       }
+       i.fa-solid.fa-list{
+        font-size: 50px;
+      }
+
+      i.fa-solid.fa-store{
+        font-size: 50px;
+      }
+      p{
+        font-size: x-large;
+        text-align: center;
+      }
     }
-    
-    .restaurants .container_cards {
-      flex-wrap: nowrap;
-      height: 500px;
-      margin-left: 9%;
-      min-width: none;
-        .cards_restaurants{
-          height: 300px;
-          justify-content: space-around;
-          margin-right: 100px;
-            figure .new_green_cards{
-              margin-left: 11%;
+    .restaurants {
+      width: 100%;
+      height: auto;
+      padding-bottom: 0;
+      h2{
+        font-size: x-large;
+      
+      }
+        .container_cards {
+         width: 100%;
+         height: auto;
+         margin-left: 50px;
+         height: auto;
+            .cards_restaurants{
+              height: 300px;
+              justify-content: space-around;
+              margin-right: 100px;
+               figure .new_green_cards{
+                margin-left: 20px;
+               }
+               .texte{
+                display: flex;
+                align-items: center;
+                padding-top: 20px;
+                  h4{
+                    font-size:x-large;
+                    margin-top: 0;
+                    margin-right: 250px;
+                  }
+                  p{
+                    margin-bottom: 0;
+                    font-size: x-large;
+                  }
+               }
             }
-            figure figcaption h4{
-              margin-left: 20px;
-            }
-        }
         
-    }
+        }
+      }
 
-    
-
-  
     .name{
       margin-top: 20px;
       padding-left:50px;
