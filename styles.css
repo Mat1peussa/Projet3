@@ -753,7 +753,7 @@ footer {
 }
 
 /*Media Queries*/
-@media all and (min-device-width: 415px) {
+@media all and (min-width: 415px) {
   header .header {
     justify-content: space-between;
     margin-right: 10%;
@@ -773,7 +773,7 @@ footer {
     font-size: xx-large;
   }
 }
-@media all and (min-device-width: 810px) {
+@media all and (min-width: 810px) {
   /* page d'accueil */
   .logo_accueil {
     height: 80px;
@@ -919,7 +919,6 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    text-overflow: none;
   }
   .name p {
     width: 100%;
@@ -929,14 +928,17 @@ footer {
   .details_price {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   .details_price p {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: -30px;
   }
   .details_price span {
+    width: 100%;
     font-size: large;
     display: flex;
     margin-left: 50px;
