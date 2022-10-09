@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
 }
@@ -7,10 +8,6 @@ a {
   color: black;
 }
 
-a:hover {
-  background: linear-gradient(#9356DC, #FF79DA);
-}
-
 h1 {
   margin-top: 20px;
   font-family: "Shrikhand", cursive;
@@ -18,8 +15,6 @@ h1 {
 
 h2 {
   font-family: "Roboto", sans-serif;
-  font-size: medium;
-  font-weight: 100;
   margin: 0;
 }
 
@@ -27,28 +22,25 @@ h3 {
   margin: 0;
   font-family: "Shrikhand", cursive;
   color: white;
-  font-weight: 100;
-  font-size: small;
 }
 
 h4 {
   font-family: "Roboto", sans-serif;
-  font-weight: 900;
   text-shadow: 0 0 black;
-  margin-left: 20px;
+}
+
+h5 {
+  display: none;
 }
 
 span {
   font-family: "Roboto", sans-serif;
-  font-weight: 600;
   display: flex;
   align-items: center;
 }
 
 p {
   font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  width: 240px;
 }
 
 /*Page d'accueil*/
@@ -91,6 +83,74 @@ p {
     z-index: 2000;
   }
 }
+/*Spinner*/
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.loader .loader_text {
+  display: flex;
+  flex-direction: column;
+}
+.loader .loader_text h1 {
+  margin-bottom: 0;
+}
+.loader .loader_text h2 {
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}
+.loader .spinner {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-51%, -53%);
+  background: transparent;
+  border-radius: 50%;
+  line-height: 150px;
+}
+.loader .spinner::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #9356DC;
+  border-top: 10px solid #99E2D0;
+  border-bottom: 10px solid #FF79DA;
+  border-radius: 50%;
+  -webkit-animation: spinner_loader 1s ease-out;
+          animation: spinner_loader 1s ease-out;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+@-webkit-keyframes spinner_loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner_loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .header_accueil {
   width: 100%;
   display: flex;
@@ -130,7 +190,8 @@ p {
   align-items: center;
 }
 #localisation_accueil span {
-  font-size: smaller;
+  font-size: small;
+  font-weight: 900;
 }
 
 .reserver {
@@ -138,10 +199,10 @@ p {
   background-color: rgb(246, 246, 246);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .reserver span {
   width: 200px;
-  padding-left: 90px;
   padding-top: 20px;
   text-align: center;
   display: flex;
@@ -168,7 +229,7 @@ p {
   height: 40px;
   background: linear-gradient(170deg, #FF79DA, #9356DC);
   border-radius: 20px;
-  margin: 10px 0 50px 90px;
+  margin: 10px 0 50px 0;
 }
 
 nav {
@@ -177,6 +238,12 @@ nav {
   align-items: center;
   width: 100%;
   background-color: white;
+}
+nav h2 {
+  width: 100%;
+  font-size: large;
+  font-weight: 900;
+  padding: 10px 0 20px 40px;
 }
 nav .cards_accueil {
   display: flex;
@@ -206,19 +273,22 @@ nav .cards_accueil .chiffre_cercle {
   color: white;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
-  margin-left: -27px;
+  margin-left: -65px;
 }
 nav .cards_accueil i.fa-solid.fa-mobile-screen {
   color: grey;
   font-size: 20px;
+  margin-left: -70px;
 }
 nav .cards_accueil i.fa-solid.fa-list {
   color: grey;
   font-size: 20px;
+  margin-left: -70px;
 }
 nav .cards_accueil i.fa-solid.fa-store {
   color: grey;
   font-size: 20px;
+  margin-left: -70px;
 }
 nav .cards_accueil p {
   font-size: 16px;
@@ -226,6 +296,7 @@ nav .cards_accueil p {
   font-weight: 600;
   color: black;
   text-shadow: 0 0 black;
+  margin-left: -50px;
 }
 
 .restaurants {
@@ -234,14 +305,22 @@ nav .cards_accueil p {
   width: 100%;
   height: auto;
   background-color: rgb(246, 246, 246);
+  display: flex;
+  flex-direction: column;
+}
+.restaurants h2 {
+  width: 50%;
+  padding: 10px 0 20px 30px;
+  font-weight: 900;
+  font-size: large;
 }
 .restaurants .container_cards {
   width: 85%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin-left: 28px;
+  justify-content: space-between;
+  margin-left: 7%;
 }
 .restaurants .container_cards .cards_restaurants {
   background-color: white;
@@ -266,7 +345,7 @@ nav .cards_accueil p {
   color: rgba(0, 129, 96, 0.929);
   position: absolute;
   margin-top: 15px;
-  margin-left: 60%;
+  margin-left: 230px;
   font-size: medium;
   font-weight: 900;
   font-family: "Roboto", sans-serif;
@@ -291,6 +370,7 @@ nav .cards_accueil p {
 }
 .restaurants .container_cards .cards_restaurants figure figcaption .texte h4 {
   margin-bottom: 10px;
+  padding-left: 20px;
 }
 .restaurants .container_cards .cards_restaurants figure figcaption .texte p {
   margin-left: 20px;
@@ -335,7 +415,7 @@ header .header {
   display: none;
 }
 
-/*Main*/
+/*Main Menu*/
 .photo img {
   width: 100%;
   height: 250px;
@@ -354,11 +434,13 @@ header .header {
   width: 90%;
   padding-left: 5%;
 }
-
-.menu .title {
+.menu .block_menu .title {
   display: flex;
   justify-content: space-around;
   margin-left: -25px;
+}
+.menu .block_menu .title h1 {
+  font-weight: 100;
 }
 
 .restaurant_card--heart {
@@ -367,8 +449,7 @@ header .header {
 .restaurant_card--heart:hover svg.coeur_plein {
   transform: scaleY(1);
 }
-
-svg.coeur_vide {
+.restaurant_card--heart svg.coeur_vide {
   overflow: hidden;
   padding-top: 21px;
   width: 27px;
@@ -376,22 +457,38 @@ svg.coeur_vide {
   stroke: black;
   fill: transparent;
 }
-
-svg.coeur_plein {
+.restaurant_card--heart svg.coeur_plein {
   background-color: transparent;
   position: absolute;
   padding-top: 20px;
   width: 30px;
   height: 30px;
   margin-left: -29px;
-  /* gradient and fallback color */
   fill: url(#my-cool-gradient) #9356DC;
-  /* transform-origin: bottom ;*/
   transform: scaleY(0);
   transition: transform 200ms ease-in-out;
 }
 
-#trait_dessous {
+/* cartes + animations */
+.entree h2 {
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: 200;
+}
+
+.plats h2 {
+  margin-top: 20px;
+  font-size: medium;
+  font-weight: 200;
+}
+
+.desserts h2 {
+  margin-top: 20px;
+  font-size: medium;
+  font-weight: 200;
+}
+
+.trait_dessous {
   border-top: 3px #99E2D0 solid;
   width: 40px;
   margin-top: 5px;
@@ -404,29 +501,18 @@ svg.coeur_plein {
   display: flex;
 }
 .blockcards .cards {
+  overflow: hidden; /* pour que la greencard ne dépasse pas au démarrage de l'animation */
   width: 100%;
   height: 75px;
   background-color: white;
   border-radius: 15px;
   margin-bottom: 15px;
-  overflow: hidden;
   display: flex;
   justify-content: flex-end;
   box-shadow: 1px 10px 15px 2px rgb(207, 207, 207);
   transform: scaleY(1);
   -webkit-animation: cards_down 2000ms;
           animation: cards_down 2000ms;
-  /* &:hover .textcards .details_price .details p{
-     overflow: hidden;
-     text-overflow: ellipsis;
-
-   }
-
-   &:hover .textcards .name span{
-     overflow: hidden;
-     text-overflow: ellipsis;
-
-   }*/
 }
 .blockcards .cards--1 {
   -webkit-animation-delay: 200ms;
@@ -505,7 +591,13 @@ svg.coeur_plein {
   transform: rotate(0deg);
 }
 .blockcards .cards:hover .price {
-  transform: translateX(-70px);
+  transform: translateX(-65px);
+}
+.blockcards .cards:hover .name p {
+  overflow: hidden;
+}
+.blockcards .cards:hover .details_price .details p {
+  overflow: hidden;
 }
 .blockcards .textcards {
   width: 100%;
@@ -513,13 +605,16 @@ svg.coeur_plein {
   display: flex;
   flex-direction: column;
   position: absolute;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-.blockcards .textcards .name span {
-  padding: 10px 0 0 15px;
+.blockcards .textcards .name p {
+  font-weight: 700;
+  font-size: small;
+  padding-left: 15px;
+  margin-bottom: 0;
   width: 200px;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
 }
 .blockcards .textcards .details_price {
   width: 100%;
@@ -528,13 +623,18 @@ svg.coeur_plein {
   padding-left: 15px;
 }
 .blockcards .textcards .details_price .details p {
-  border: 1px solid black;
+  font-size: small;
   width: 200px;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
 }
 .blockcards .textcards .details_price .price {
+  font-size: small;
+  font-weight: 700;
   margin-right: 30px;
   display: flex;
-  transition: transform 800ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 .blockcards .greenbox {
   position: relative;
@@ -548,7 +648,7 @@ svg.coeur_plein {
   align-items: center;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 800ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 .blockcards .greenbox .whitecircle {
   background-color: white;
@@ -559,7 +659,7 @@ svg.coeur_plein {
   align-items: center;
   justify-content: center;
   transform: rotate(-360deg);
-  transition: transform 600ms ease-in;
+  transition: transform 450ms ease-in;
 }
 .blockcards .greenbox .whitecircle .fa-check:before {
   color: #99E2D0;
@@ -597,74 +697,6 @@ svg.coeur_plein {
   margin-left: 25%;
 }
 
-/*Spinner*/
-.loader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(#9356DC, #FF79DA);
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-}
-.loader .loader_text {
-  display: flex;
-  flex-direction: column;
-}
-.loader .loader_text h1 {
-  margin-bottom: 0;
-}
-.loader .loader_text h2 {
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
-}
-.loader .spinner {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: transparent;
-  border-radius: 50%;
-  line-height: 150px;
-}
-.loader .spinner::before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  width: 100%;
-  height: 100%;
-  border: 10px solid #9356DC;
-  border-top: 10px solid #99E2D0;
-  border-bottom: 10px solid #FF79DA;
-  border-radius: 50%;
-  -webkit-animation: spinner_loader 1s ease-out;
-          animation: spinner_loader 1s ease-out;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
-}
-@-webkit-keyframes spinner_loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spinner_loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*Footer*/
 footer {
   background-color: rgb(54, 54, 54);
@@ -675,6 +707,7 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-left: 20px;
+  font-weight: 100;
 }
 
 .proposer {
@@ -684,9 +717,9 @@ footer {
   margin-left: 20px;
   font-size: small;
 }
-
 .proposer span {
   padding-left: 10px;
+  font-weight: 700;
 }
 
 .partenaire {
@@ -697,9 +730,9 @@ footer {
   margin-top: 5px;
   font-size: small;
 }
-
 .partenaire span {
   padding-left: 5px;
+  font-weight: 700;
 }
 
 .mentions {
@@ -707,6 +740,7 @@ footer {
   margin-left: 20px;
   font-size: small;
   color: white;
+  font-weight: 700;
 }
 
 .contact a {
@@ -718,6 +752,7 @@ footer {
   color: white;
 }
 
+/*Media Queries*/
 @media all and (min-device-width: 415px) {
   header .header {
     justify-content: space-between;
@@ -738,7 +773,22 @@ footer {
     font-size: xx-large;
   }
 }
-@media all and (min-device-width: 992px) {
+@media all and (min-device-width: 810px) {
+  /* page d'accueil */
+  .logo_accueil {
+    height: 80px;
+  }
+  .logo_accueil img {
+    padding-top: 10px;
+    width: 250px;
+    height: 50px;
+  }
+  #localisation_accueil {
+    height: 80px;
+  }
+  #localisation_accueil span {
+    font-size: x-large;
+  }
   .menu .title {
     font-size: x-large;
   }
@@ -747,30 +797,55 @@ footer {
     align-items: center;
     justify-content: space-around;
   }
+  .reserver span {
+    font-size: x-large;
+  }
+  .reserver p {
+    font-size: larger;
+  }
   .reserver a {
     margin-top: 50px;
   }
   nav {
-    flex-direction: row;
-    justify-content: space-around;
     padding-top: 20px;
   }
-  h4 {
-    padding-bottom: 20px;
-    align-items: center;
+  nav h2 {
+    width: 100%;
     font-size: x-large;
-  }
-  .restaurants h4 {
-    margin-left: 2.8%;
+    padding-left: 70px;
   }
   nav .cards_accueil {
-    width: 25%;
+    width: 80%;
+    height: auto;
+  }
+  nav .cards_accueil .chiffre_cercle {
+    font-size: x-large;
+    height: 50px;
+    width: 50px;
+  }
+  nav .cards_accueil i.fa-solid.fa-mobile-screen {
+    font-size: 50px;
+  }
+  nav .cards_accueil i.fa-solid.fa-list {
+    font-size: 50px;
+  }
+  nav .cards_accueil i.fa-solid.fa-store {
+    font-size: 50px;
+  }
+  nav .cards_accueil p {
+    font-size: x-large;
+    text-align: center;
+  }
+  .restaurants {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
   }
   .restaurants .container_cards {
-    flex-wrap: nowrap;
-    height: 500px;
-    margin-left: 9%;
-    min-width: none;
+    width: 100%;
+    height: auto;
+    margin-left: 50px;
+    height: auto;
   }
   .restaurants .container_cards .cards_restaurants {
     height: 300px;
@@ -778,38 +853,93 @@ footer {
     margin-right: 100px;
   }
   .restaurants .container_cards .cards_restaurants figure .new_green_cards {
-    margin-left: 11%;
-  }
-  .restaurants .container_cards .cards_restaurants figure figcaption h4 {
     margin-left: 20px;
   }
-  .name {
-    margin-top: 20px;
-    padding-left: 50px;
+  .restaurants .container_cards .cards_restaurants .texte {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .restaurants .container_cards .cards_restaurants .texte h4 {
+    font-size: x-large;
+    margin-top: 0;
+  }
+  .restaurants .container_cards .cards_restaurants .texte p {
+    margin-bottom: 0;
+    font-size: large;
+  }
+  /* Toutes les pages menus */
+  .block_menu .title {
+    justify-content: center;
+  }
+  .block_menu .trait_dessous {
+    margin-top: 0px;
+    width: 300px;
+    margin-left: -88px;
+  }
+  .block_menu .entree {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    font-size: x-large;
+    justify-content: space-around;
   }
-  .name span {
+  .block_menu .entree h2 {
+    margin-top: -20px;
+    margin-right: 10px;
+  }
+  .block_menu .plats {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .block_menu .plats h2 {
+    margin-top: -20px;
+    margin-right: 36px;
+  }
+  .block_menu .desserts {
+    display: flex;
+    justify-content: space-around;
+  }
+  .block_menu .desserts h2 {
+    margin-top: -20px;
+  }
+  .blockcards {
+    margin-right: 10px;
+  }
+  .blockcards .cards {
+    height: 120px;
+    min-width: 260px;
+    margin-bottom: 40px;
+  }
+  .blockcards .cards:hover .price {
+    transform: translateX(0);
+  }
+  .name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-overflow: none;
+  }
+  .name p {
+    width: 100%;
+    display: flex;
     justify-content: center;
   }
   .details_price {
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
   }
   .details_price p {
-    font-size: x-large;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -30px;
   }
   .details_price span {
-    margin-top: 20px;
-    padding-bottom: 20px;
-    font-size: xx-large;
+    font-size: large;
     display: flex;
-    justify-content: center;
+    margin-left: 50px;
   }
   footer .logo {
     display: flex;
