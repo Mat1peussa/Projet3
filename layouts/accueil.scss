@@ -1,0 +1,252 @@
+  /*Page d'accueil*/
+
+  .page_accueil{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation-delay: 3s;
+    animation-name: load_accueil;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes load_accueil {
+    0%{
+      display: none;
+      opacity:0;
+      z-index: 2000;
+    }
+    100%{
+      opacity: 1;
+      z-index: 2000;
+    }
+  }
+  
+  .header_accueil{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  .logo_accueil {
+    background-color:white;
+    width: 100%;
+    height: 50px;
+    box-shadow: 1px 1px 5px grey;
+    position: relative;
+      .logo{
+        display: flex;
+        justify-content: center;
+        height: 100%;
+      }
+        img{
+       margin-top: 15px;
+       width: 140px;
+       height: 25px;
+      }
+  }
+  
+  #localisation_accueil{
+    height:40px;
+    display: flex;
+    justify-content: center;
+    padding-right: 25px;
+    background-color: rgb(235, 235, 235) ;
+      i{
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+      }
+      span{
+        font-size:small;
+        font-weight: 900;
+      }
+  }
+  
+  .reserver{
+    width: 100%;
+    background-color: $grey-color ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      span{
+        width: 200px;
+        padding-top: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        font-weight: 900;
+        font-size:larger;
+        text-shadow: 0 0 black;
+      }
+      p{
+        padding-left:20px ;
+        text-align: center;
+        width: auto;
+        font-size: medium;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+      }
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $grey-color;
+        width: 200px ;
+        height: 40px;
+        background: linear-gradient(170deg, $secondary-color, $primary-color);
+        border-radius: 20px;
+        margin: 10px 0 50px 0 ;
+      }
+  }
+  
+  nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+      h2{
+        width: 100%;
+        font-size: large;
+        font-weight: 900;
+        padding: 10px 0 20px 40px
+      }
+      .cards_accueil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        width: 90%;
+        height: 75px;
+        background: $grey-color ;
+        border-radius: 20px;
+        box-shadow : 1px 10px 15px 2px rgb(207, 207, 207) ;
+        margin-bottom: 20px;
+          &:hover {
+            background: #ecdcff;
+            box-shadow : 1px 10px 15px 2px rgb(129, 129, 129);
+          }
+          .chiffre_cercle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: small;
+            height: 25px;
+            width: 25px;
+            background: $primary-color;
+            border-radius: 50%;
+            color: white;
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+            margin-left: -65px;
+          }
+            i.fa-solid.fa-mobile-screen{
+              color:grey;
+              font-size: 20px;
+              margin-left: -70px;
+            }
+            i.fa-solid.fa-list{
+              color:grey;
+              font-size: 20px;
+              margin-left: -70px;
+            }
+            i.fa-solid.fa-store{
+              color:grey;
+              font-size: 20px;
+              margin-left: -70px;
+            }
+            p{
+              font-size:16px;
+              font-family: "Roboto", sans-serif;
+              font-weight: 600;
+              color: black;
+              text-shadow: 0 0 black;
+              margin-left: -50px;
+            }
+      }
+  }
+    
+  .restaurants{
+    margin: 0;
+    padding-top: 15px;
+    width: 100%;
+    height: auto;
+    background-color: $grey-color ;
+    display: flex;
+    flex-direction: column;
+      h2{
+        width: 50%;
+        padding : 10px 0 20px 30px;
+        font-weight: 900;
+        font-size: large;
+      }
+      .container_cards{
+        width: 85%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 7%;
+          .cards_restaurants{
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 1px 1px 30px grey;
+            flex-direction: column;
+            width: 100%;
+            height: 260px;
+            margin-bottom: 20px;
+              figure{
+                height:auto ;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 0;
+                  .new_green_cards{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: rgba(0, 129, 96, 0.929);
+                    position: absolute;
+                    margin-top: 15px;
+                    margin-left: 230px;
+                    font-size: medium;
+                    font-weight: 900;
+                    font-family: "Roboto", sans-serif;
+                    width: 80px;
+                    height: 30px;
+                    border-radius: 2px;
+                    background: $tertiary-color;
+                    z-index: 1;
+                  }
+                    img{
+                       width: 100%;
+                       height: 180px;
+                       display: flex;
+                       object-fit: cover;
+                       border-radius:20px 20px 0 0;
+                    }
+                    figcaption{
+                      display: flex;
+                      width: 90%;
+                      justify-content: space-between;
+                        .texte h4{
+                          margin-bottom: 10px;
+                          padding-left: 20px;
+                        }
+                        .texte p{
+                          margin-left: 20px;
+                          font-weight: 900;
+                          font-size: 16px;
+                          margin-top: 0;
+                        }
+                    }
+                }
+          }
+      }
+  }

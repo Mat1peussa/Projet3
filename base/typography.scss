@@ -1,0 +1,51 @@
+@mixin fontroboto {
+    font-family: "Roboto", sans-serif;
+  }
+  @mixin fontshrikhand {
+    font-family: "Shrikhand", cursive;
+  }
+
+  body{
+    margin: 0;
+  }
+  
+  a{
+    text-decoration: none;
+    color: black;
+  }
+    
+  h1{
+    font-size: x-large !important;
+    margin-top: 20px;
+    @include fontshrikhand;
+  }
+    
+  h2{
+    @include fontroboto;
+    margin: 0;
+  }
+    
+  h3{
+    margin: 0;
+    @include fontshrikhand;
+    color: white;
+  }
+  
+  h4{
+    @include fontroboto;
+    text-shadow: 0 0 black;
+  }
+  
+  h5{
+    display: none;
+  }
+    
+  span{
+    @include fontroboto;
+    display: flex;
+    align-items: center;
+  }
+    
+  p{
+    @include fontroboto;
+  }

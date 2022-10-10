@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  font-size: x-large !important;
+  margin-top: 20px;
+  font-family: "Shrikhand", cursive;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Shrikhand", cursive;
+  color: white;
+}
+
+h4 {
+  font-family: "Roboto", sans-serif;
+  text-shadow: 0 0 black;
+}
+
+h5 {
+  display: none;
+}
+
+span {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}/*# sourceMappingURL=typography.css.map */
