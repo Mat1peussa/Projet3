@@ -9,6 +9,7 @@ a {
 }
 
 h1 {
+  font-size: x-large !important;
   margin-top: 20px;
   font-family: "Shrikhand", cursive;
 }
@@ -43,46 +44,6 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
-/*Page d'accueil*/
-.page_accueil {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-  -webkit-animation-name: load_accueil;
-          animation-name: load_accueil;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes load_accueil {
-  0% {
-    display: none;
-    opacity: 0;
-    z-index: 2000;
-  }
-  100% {
-    opacity: 1;
-    z-index: 2000;
-  }
-}
-
-@keyframes load_accueil {
-  0% {
-    display: none;
-    opacity: 0;
-    z-index: 2000;
-  }
-  100% {
-    opacity: 1;
-    z-index: 2000;
-  }
-}
 /*Spinner*/
 .loader {
   position: fixed;
@@ -151,6 +112,46 @@ p {
   }
 }
 
+/*Page d'accueil*/
+.page_accueil {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-name: load_accueil;
+          animation-name: load_accueil;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes load_accueil {
+  0% {
+    display: none;
+    opacity: 0;
+    z-index: 2000;
+  }
+  100% {
+    opacity: 1;
+    z-index: 2000;
+  }
+}
+
+@keyframes load_accueil {
+  0% {
+    display: none;
+    opacity: 0;
+    z-index: 2000;
+  }
+  100% {
+    opacity: 1;
+    z-index: 2000;
+  }
+}
 .header_accueil {
   width: 100%;
   display: flex;
@@ -172,8 +173,8 @@ p {
   height: 100%;
 }
 .logo_accueil img {
-  margin-top: 10px;
-  width: 150px;
+  margin-top: 15px;
+  width: 140px;
   height: 25px;
 }
 
@@ -388,7 +389,7 @@ header {
 
 #logo img {
   margin-top: 10px;
-  width: 150px;
+  width: 140px;
 }
 
 header .header {
@@ -452,8 +453,8 @@ header .header {
 .restaurant_card--heart svg.coeur_vide {
   overflow: hidden;
   padding-top: 21px;
-  width: 27px;
-  height: 27px;
+  width: 22px;
+  height: 22px;
   stroke: black;
   fill: transparent;
 }
@@ -461,9 +462,9 @@ header .header {
   background-color: transparent;
   position: absolute;
   padding-top: 20px;
-  width: 30px;
-  height: 30px;
-  margin-left: -29px;
+  width: 25px;
+  height: 25px;
+  margin-left: -24px;
   fill: url(#my-cool-gradient) #9356DC;
   transform: scaleY(0);
   transition: transform 200ms ease-in-out;

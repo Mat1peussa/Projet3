@@ -1,0 +1,232 @@
+/*Media Queries*/  
+
+@media all and (min-width: 415px) {
+    header .header {
+      justify-content: space-between;
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+    
+    #arrow_left {
+      display: none;
+    }
+    
+    .retour_accueil {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+    
+    .twitter {
+      display: flex;
+      align-items: center;
+        font-size: xx-large;
+      }
+  }
+    
+  @media all and (min-width: 810px ) {
+      
+   /* page d'accueil */ 
+  
+   .logo_accueil {
+      height: 80px;
+        img{
+          padding-top: 10px;
+          width: 250px;
+          height: 50px;
+        }
+    }
+  
+    #localisation_accueil{
+      height: 80px;
+        span{
+          font-size: x-large;
+        }
+    }
+    
+    .menu .title{
+      font-size: x-large;
+    }
+  
+    .reserver{
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+        span{
+          font-size: x-large;
+        }
+        p{
+          font-size: larger;
+        }
+          a{
+            margin-top: 50px;
+          }
+    }
+    
+    nav {
+      padding-top: 20px;
+        h2{
+          width: 100%;
+          font-size: x-large;
+          padding-left: 70px;
+        }
+        .cards_accueil{
+          width: 80%;
+          height: auto;
+            .chiffre_cercle{
+              font-size: x-large;
+              height: 50px;
+              width: 50px;
+            }
+            i.fa-solid.fa-mobile-screen{
+              font-size: 50px;
+            }
+            i.fa-solid.fa-list{
+              font-size: 50px;
+            }
+            i.fa-solid.fa-store{
+              font-size: 50px;
+            }
+            p{
+              font-size: x-large;
+              text-align: center;
+            }
+        }
+    }
+    
+    .restaurants {
+      width: 100%;
+      height: auto;
+      padding-bottom: 0;
+        .container_cards {
+          width: 100%;
+          height: auto;
+          margin-left: 50px;
+          height: auto;
+            .cards_restaurants{
+              height: 300px;
+              justify-content: space-around;
+              margin-right: 100px;
+                figure .new_green_cards{
+                  margin-left: 20px;
+                }
+                .texte{
+                  width: 70%;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding-top: 20px;
+                    h4{
+                      font-size:x-large;
+                      margin-top: 0;
+                    }
+                    p{
+                      margin-bottom: 0;
+                      font-size: large;
+                    }
+                }
+            }
+        }
+    }
+  
+    /* Toutes les pages menus */
+      
+    .block_menu{
+        .title{
+          justify-content: center;
+         }
+  
+         .trait_dessous{
+          margin-top: 0px;
+          width: 300px;
+          margin-left: -88px;
+         }
+  
+         .entree{
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+            h2{
+              margin-top: -20px;
+              margin-right: 10px;
+            }
+         }
+         .plats{
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+            h2{
+              margin-top: -20px;
+              margin-right: 36px;
+            }
+         }
+         .desserts{
+          display: flex;
+          justify-content: space-around;
+            h2{
+              margin-top: -20px;
+            }
+         }
+         
+    }
+  
+    .blockcards{
+      margin-right: 10px;
+        .cards{
+          height: 120px;
+          min-width: 260px;
+          margin-bottom: 40px;
+            &:hover .price{
+              transform: translateX(0);
+            }
+        }
+    }
+  
+    .name{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+        p{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+    }
+    
+    .details_price{
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      }
+    
+    .details_price p{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: -30px;
+    }
+    
+    .details_price span{
+      width: 100%;
+      font-size:large;
+      display: flex;
+      margin-left: 50px;
+    }
+    
+    footer .logo{
+      display: flex;
+      justify-content: center;
+    }
+    
+    .logo h3{
+      font-size: x-large;
+    }
+    
+    .text_footer {
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
