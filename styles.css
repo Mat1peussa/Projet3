@@ -9,7 +9,7 @@ a {
 }
 
 h1 {
-  font-size: x-large !important;
+  font-size: large !important;
   margin-top: 20px;
   font-family: "Shrikhand", cursive;
 }
@@ -514,6 +514,10 @@ header .header {
   transform: scaleY(1);
   -webkit-animation: cards_down 2000ms;
           animation: cards_down 2000ms;
+  /*animation-delay: 1.2s;
+  animation-name: slide;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-duration: 1.2s;*/
 }
 .blockcards .cards--1 {
   -webkit-animation-delay: 200ms;
@@ -668,23 +672,35 @@ header .header {
 
 @-webkit-keyframes cards_down {
   0% {
-    transform: scaleY(0);
+    transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
-    transform: scaleY(1);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes cards_down {
   0% {
-    transform: scaleY(0);
+    transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
-    transform: scaleY(1);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
+/* @keyframes slide {
+   0% {
+     transform: translateY(-1000px);
+     opacity: 0;
+   }
+   100% {
+     transform: translateY(0);
+     opacity: 1;
+   }
+ }*/
 .commander {
   margin-top: 40px;
   display: flex;
