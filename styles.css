@@ -822,6 +822,7 @@ footer {
 @media all and (min-width: 810px) {
   /* page d'accueil */
   .logo_accueil {
+    width: 100%;
     height: 80px;
   }
   .logo_accueil img {
@@ -853,10 +854,11 @@ footer {
     margin-top: 50px;
   }
   nav {
+    width: 100%;
     padding-top: 20px;
   }
   nav h2 {
-    width: 100%;
+    width: 500px;
     font-size: x-large;
     padding-left: 170px;
   }
@@ -888,7 +890,7 @@ footer {
     padding-bottom: 0;
   }
   .restaurants .container_cards {
-    width: 100%;
+    width: 95%;
     height: auto;
     margin-left: 50px;
     height: auto;
