@@ -2,6 +2,7 @@
 
 .loader{
     position: fixed;
+    z-index: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -9,6 +10,8 @@
     align-items: center;
     background: linear-gradient($primary-color, $secondary-color);
     animation-delay: 3s;
+    animation-name: spinner_invisible;
+    animation-fill-mode: forwards;
       .loader_text{
         display: flex;
         flex-direction: column;
@@ -16,9 +19,8 @@
             margin-bottom: 0;
           }
           h2{
-            display: flex;
-            justify-content: center;
-            font-weight: 900;
+            margin-left: 50px;
+            font-weight: 500;
           }
       } 
       .spinner{
@@ -46,13 +48,26 @@
           animation:spinner_loader 1s ease-out ;
           animation-iteration-count: 3;
         }
+
+      
   
     @keyframes spinner_loader{
       0%{
         transform:rotate(0deg);
+        
       }
       100%{
         transform:rotate(360deg);
       }
     }
   }
+
+  @keyframes spinner_invisible{
+    0%{
+    }
+    100%{
+      z-index: 0;
+    }
+  }
+  
+

@@ -2,10 +2,9 @@
 
   .page_accueil{
     position: absolute;
+    z-index: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     animation-delay: 3s;
     animation-name: load_accueil;
     animation-duration: 2s;
@@ -16,11 +15,11 @@
     0%{
       display: none;
       opacity:0;
-      z-index: 2000;
+    
     }
     100%{
       opacity: 1;
-      z-index: 2000;
+      z-index: 1000;
     }
   }
   
@@ -63,7 +62,7 @@
       }
       span{
         font-size:small;
-        font-weight: 900;
+        font-weight: 700;
       }
   }
   
@@ -74,21 +73,21 @@
     flex-direction: column;
     align-items: center;
       span{
-        width: 200px;
+        width: 250px;
         padding-top: 20px;
         text-align: center;
         display: flex;
         justify-content: center;
-        font-weight: 900;
-        font-size:larger;
+        font-size:x-large;
         text-shadow: 0 0 black;
+        font-weight: 700;
       }
       p{
         padding-left:20px ;
         text-align: center;
         width: auto;
         font-size: medium;
-        font-weight: 700;
+        font-weight: 100;
         display: flex;
         justify-content: center;
       }
@@ -97,11 +96,18 @@
         justify-content: center;
         align-items: center;
         color: $grey-color;
-        width: 200px ;
-        height: 40px;
+        font-weight: 600;
+        font-size: 13px;
+        width: 190px ;
+        height: 50px;
         background: linear-gradient(170deg, $secondary-color, $primary-color);
-        border-radius: 20px;
+        border-radius: 40px;
         margin: 10px 0 50px 0 ;
+        box-shadow: 1px 2px 10px grey ;
+        &:hover{
+          background: linear-gradient(170deg, #fcb0e6, #b678fd);
+          box-shadow: 1px 3px 10px grey;
+      }
       }
   }
   
@@ -112,25 +118,37 @@
     width: 100%;
     background-color: white;
       h2{
-        width: 100%;
-        font-size: large;
-        font-weight: 900;
-        padding: 10px 0 20px 40px
+        font-size: x-large;
+        font-weight: 700;
+        padding-top: 40px;
+        margin-bottom: 20px;
+        margin-left: -120px;
       }
       .cards_accueil {
         display: flex;
-        justify-content: center;
         align-items: center;
-        justify-content: space-around;
-        width: 90%;
+        width: 85%;
         height: 75px;
         background: $grey-color ;
         border-radius: 20px;
-        box-shadow : 1px 10px 15px 2px rgb(207, 207, 207) ;
+        box-shadow : 1px 5px 15px 1px rgb(207, 207, 207) ;
         margin-bottom: 20px;
+        margin-left: 10px;
           &:hover {
-            background: #ecdcff;
-            box-shadow : 1px 10px 15px 2px rgb(129, 129, 129);
+            background: #f3eaff;
+            box-shadow : 5px 5px 15px 1px rgb(207, 207, 207);
+          }
+
+          &:hover i.fa-solid.fa-mobile-screen{
+            color:$primary-color
+          }
+
+          &:hover i.fa-solid.fa-list{
+            color:$primary-color
+          }
+
+          &:hover i.fa-solid.fa-store{
+            color:$primary-color
           }
           .chiffre_cercle{
             display: flex;
@@ -144,34 +162,35 @@
             color: white;
             font-family: "Roboto", sans-serif;
             font-weight: 600;
-            margin-left: -65px;
+            margin-left: -12px;
           }
-            i.fa-solid.fa-mobile-screen{
+          i.fa-solid.fa-mobile-screen{
               color:grey;
               font-size: 20px;
-              margin-left: -70px;
-            }
-            i.fa-solid.fa-list{
+              margin-left: 25px;
+          }
+          i.fa-solid.fa-list{
               color:grey;
               font-size: 20px;
-              margin-left: -70px;
-            }
-            i.fa-solid.fa-store{
+              margin-left: 20px;
+          }
+          i.fa-solid.fa-store{
               color:grey;
               font-size: 20px;
-              margin-left: -70px;
-            }
-            p{
+              margin-left: 20px;
+          }
+          p{
               font-size:16px;
-              font-family: "Roboto", sans-serif;
               font-weight: 600;
               color: black;
               text-shadow: 0 0 black;
-              margin-left: -50px;
-            }
+              margin-left: 20px;
+          }
       }
+
+      
   }
-    
+
   .restaurants{
     margin: 0;
     padding-top: 15px;
@@ -183,8 +202,7 @@
       h2{
         width: 50%;
         padding : 10px 0 20px 30px;
-        font-weight: 900;
-        font-size: large;
+        font-size: x-large;
       }
       .container_cards{
         width: 85%;
@@ -208,6 +226,7 @@
                 align-items: flex-start;
                 margin: 0;
                   .new_green_cards{
+                    font-weight: 700;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -216,7 +235,6 @@
                     margin-top: 15px;
                     margin-left: 230px;
                     font-size: medium;
-                    font-weight: 900;
                     font-family: "Roboto", sans-serif;
                     width: 80px;
                     height: 30px;
@@ -236,14 +254,17 @@
                       width: 90%;
                       justify-content: space-between;
                         .texte h4{
+                          font-weight: 800;
                           margin-bottom: 10px;
                           padding-left: 20px;
                         }
                         .texte p{
                           margin-left: 20px;
-                          font-weight: 900;
                           font-size: 16px;
                           margin-top: 0;
+                        }
+                        .restaurant_card--heart{
+                          padding-top: 10px;
                         }
                     }
                 }

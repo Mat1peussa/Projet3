@@ -57,8 +57,11 @@ header {
             display: flex;
             justify-content: space-around;
             margin-left: -25px;
+            padding-top: 30px;
               h1{
                 font-weight: 100;
+                font-size: 28px;
+                margin-top: 5px;
               }
           }
       } 
@@ -71,7 +74,7 @@ header {
     }
     svg.coeur_vide{
       overflow: hidden;
-      padding-top: 21px;
+      padding-top: 10px;
       width: 22px;
       height: 22px;
       stroke: black;
@@ -80,7 +83,7 @@ header {
     svg.coeur_plein{
       background-color: transparent ;
       position: absolute;
-      padding-top: 20px;
+      padding-top: 9px;
       width: 25px;
       height: 25px;
       margin-left: -24px;
@@ -93,7 +96,7 @@ header {
   /* cartes + animations */
   
   .entree h2{
-      margin-top: 10px;
+      margin-top: 20px;
       font-size: medium;
       font-weight: 200;
   }
@@ -142,10 +145,6 @@ header {
             }
           }
 
-        /*animation-delay: 1.2s;
-        animation-name: slide;
-        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        animation-duration: 1.2s;*/
           &:hover .greenbox {
            transform: scaleX(1);
           }
@@ -170,7 +169,6 @@ header {
           position: absolute;
             .name p{
               font-weight: 700;
-              font-size:small;
               padding-left: 15px;
               margin-bottom: 0;
               width: 200px;
@@ -197,8 +195,9 @@ header {
                   display: flex;
                   transition: transform 500ms ease-in-out;
                 }
-              }
-        } 
+            }
+         
+      }
         .greenbox{
           position: relative;
           background-color: $tertiary-color;
@@ -228,7 +227,7 @@ header {
             }
         }
   }
-  
+    
   @keyframes cards_down {
     0%{
       transform: translateY(-1000px);
@@ -240,28 +239,23 @@ header {
     }
   }
 
- /* @keyframes slide {
-    0% {
-      transform: translateY(-1000px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }*/
-  
-  
-  
   .commander{
     margin-top: 40px;
     display:flex ;
     justify-content: center;
     background-color: $secondary-color;
-    background: linear-gradient($secondary-color, $primary-color);
+    background: linear-gradient(170deg ,$secondary-color, $primary-color);
     color: white;
+    box-shadow: 1px 2px 5px grey;
     border-radius: 25px;
     width: 50%;
     height: 40px;
     margin-left: 25%;
+      span{
+        font-weight: 200;
+      }
+      &:hover{
+        background: linear-gradient(170deg, #fcb0e6, #b678fd);
+        box-shadow: 1px 3px 10px grey;
+    }
   }

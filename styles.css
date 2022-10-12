@@ -6,10 +6,11 @@ body {
 a {
   text-decoration: none;
   color: black;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
-  font-size: large !important;
+  font-size: large;
   margin-top: 20px;
   font-family: "Shrikhand", cursive;
 }
@@ -17,6 +18,8 @@ h1 {
 h2 {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  padding: 0;
+  text-shadow: 0 0 black;
 }
 
 h3 {
@@ -27,7 +30,6 @@ h3 {
 
 h4 {
   font-family: "Roboto", sans-serif;
-  text-shadow: 0 0 black;
 }
 
 h5 {
@@ -47,6 +49,7 @@ p {
 /*Spinner*/
 .loader {
   position: fixed;
+  z-index: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -55,6 +58,10 @@ p {
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
+  -webkit-animation-name: spinner_invisible;
+          animation-name: spinner_invisible;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .loader .loader_text {
   display: flex;
@@ -64,9 +71,8 @@ p {
   margin-bottom: 0;
 }
 .loader .loader_text h2 {
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
+  margin-left: 50px;
+  font-weight: 500;
 }
 .loader .spinner {
   position: absolute;
@@ -112,13 +118,23 @@ p {
   }
 }
 
+@-webkit-keyframes spinner_invisible {
+  100% {
+    z-index: 0;
+  }
+}
+
+@keyframes spinner_invisible {
+  100% {
+    z-index: 0;
+  }
+}
 /*Page d'accueil*/
 .page_accueil {
   position: absolute;
+  z-index: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
   -webkit-animation-name: load_accueil;
@@ -133,11 +149,10 @@ p {
   0% {
     display: none;
     opacity: 0;
-    z-index: 2000;
   }
   100% {
     opacity: 1;
-    z-index: 2000;
+    z-index: 1000;
   }
 }
 
@@ -145,11 +160,10 @@ p {
   0% {
     display: none;
     opacity: 0;
-    z-index: 2000;
   }
   100% {
     opacity: 1;
-    z-index: 2000;
+    z-index: 1000;
   }
 }
 .header_accueil {
@@ -192,7 +206,7 @@ p {
 }
 #localisation_accueil span {
   font-size: small;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .reserver {
@@ -203,21 +217,21 @@ p {
   align-items: center;
 }
 .reserver span {
-  width: 200px;
+  width: 250px;
   padding-top: 20px;
   text-align: center;
   display: flex;
   justify-content: center;
-  font-weight: 900;
-  font-size: larger;
+  font-size: x-large;
   text-shadow: 0 0 black;
+  font-weight: 700;
 }
 .reserver p {
   padding-left: 20px;
   text-align: center;
   width: auto;
   font-size: medium;
-  font-weight: 700;
+  font-weight: 100;
   display: flex;
   justify-content: center;
 }
@@ -226,11 +240,18 @@ p {
   justify-content: center;
   align-items: center;
   color: rgb(246, 246, 246);
-  width: 200px;
-  height: 40px;
+  font-weight: 600;
+  font-size: 13px;
+  width: 190px;
+  height: 50px;
   background: linear-gradient(170deg, #FF79DA, #9356DC);
-  border-radius: 20px;
+  border-radius: 40px;
   margin: 10px 0 50px 0;
+  box-shadow: 1px 2px 10px grey;
+}
+.reserver a:hover {
+  background: linear-gradient(170deg, #fcb0e6, #b678fd);
+  box-shadow: 1px 3px 10px grey;
 }
 
 nav {
@@ -241,26 +262,35 @@ nav {
   background-color: white;
 }
 nav h2 {
-  width: 100%;
-  font-size: large;
-  font-weight: 900;
-  padding: 10px 0 20px 40px;
+  font-size: x-large;
+  font-weight: 700;
+  padding-top: 40px;
+  margin-bottom: 20px;
+  margin-left: -120px;
 }
 nav .cards_accueil {
   display: flex;
-  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  width: 90%;
+  width: 85%;
   height: 75px;
   background: rgb(246, 246, 246);
   border-radius: 20px;
-  box-shadow: 1px 10px 15px 2px rgb(207, 207, 207);
+  box-shadow: 1px 5px 15px 1px rgb(207, 207, 207);
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 nav .cards_accueil:hover {
-  background: #ecdcff;
-  box-shadow: 1px 10px 15px 2px rgb(129, 129, 129);
+  background: #f3eaff;
+  box-shadow: 5px 5px 15px 1px rgb(207, 207, 207);
+}
+nav .cards_accueil:hover i.fa-solid.fa-mobile-screen {
+  color: #9356DC;
+}
+nav .cards_accueil:hover i.fa-solid.fa-list {
+  color: #9356DC;
+}
+nav .cards_accueil:hover i.fa-solid.fa-store {
+  color: #9356DC;
 }
 nav .cards_accueil .chiffre_cercle {
   display: flex;
@@ -274,30 +304,29 @@ nav .cards_accueil .chiffre_cercle {
   color: white;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
-  margin-left: -65px;
+  margin-left: -12px;
 }
 nav .cards_accueil i.fa-solid.fa-mobile-screen {
   color: grey;
   font-size: 20px;
-  margin-left: -70px;
+  margin-left: 25px;
 }
 nav .cards_accueil i.fa-solid.fa-list {
   color: grey;
   font-size: 20px;
-  margin-left: -70px;
+  margin-left: 20px;
 }
 nav .cards_accueil i.fa-solid.fa-store {
   color: grey;
   font-size: 20px;
-  margin-left: -70px;
+  margin-left: 20px;
 }
 nav .cards_accueil p {
   font-size: 16px;
-  font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: black;
   text-shadow: 0 0 black;
-  margin-left: -50px;
+  margin-left: 20px;
 }
 
 .restaurants {
@@ -312,8 +341,7 @@ nav .cards_accueil p {
 .restaurants h2 {
   width: 50%;
   padding: 10px 0 20px 30px;
-  font-weight: 900;
-  font-size: large;
+  font-size: x-large;
 }
 .restaurants .container_cards {
   width: 85%;
@@ -340,6 +368,7 @@ nav .cards_accueil p {
   margin: 0;
 }
 .restaurants .container_cards .cards_restaurants figure .new_green_cards {
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -348,7 +377,6 @@ nav .cards_accueil p {
   margin-top: 15px;
   margin-left: 230px;
   font-size: medium;
-  font-weight: 900;
   font-family: "Roboto", sans-serif;
   width: 80px;
   height: 30px;
@@ -370,14 +398,17 @@ nav .cards_accueil p {
   justify-content: space-between;
 }
 .restaurants .container_cards .cards_restaurants figure figcaption .texte h4 {
+  font-weight: 800;
   margin-bottom: 10px;
   padding-left: 20px;
 }
 .restaurants .container_cards .cards_restaurants figure figcaption .texte p {
   margin-left: 20px;
-  font-weight: 900;
   font-size: 16px;
   margin-top: 0;
+}
+.restaurants .container_cards .cards_restaurants figure figcaption .restaurant_card--heart {
+  padding-top: 10px;
 }
 
 /*header menu*/
@@ -439,9 +470,12 @@ header .header {
   display: flex;
   justify-content: space-around;
   margin-left: -25px;
+  padding-top: 30px;
 }
 .menu .block_menu .title h1 {
   font-weight: 100;
+  font-size: 28px;
+  margin-top: 5px;
 }
 
 .restaurant_card--heart {
@@ -452,7 +486,7 @@ header .header {
 }
 .restaurant_card--heart svg.coeur_vide {
   overflow: hidden;
-  padding-top: 21px;
+  padding-top: 10px;
   width: 22px;
   height: 22px;
   stroke: black;
@@ -461,7 +495,7 @@ header .header {
 .restaurant_card--heart svg.coeur_plein {
   background-color: transparent;
   position: absolute;
-  padding-top: 20px;
+  padding-top: 9px;
   width: 25px;
   height: 25px;
   margin-left: -24px;
@@ -472,7 +506,7 @@ header .header {
 
 /* cartes + animations */
 .entree h2 {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: medium;
   font-weight: 200;
 }
@@ -514,10 +548,6 @@ header .header {
   transform: scaleY(1);
   -webkit-animation: cards_down 2000ms;
           animation: cards_down 2000ms;
-  /*animation-delay: 1.2s;
-  animation-name: slide;
-  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  animation-duration: 1.2s;*/
 }
 .blockcards .cards--1 {
   -webkit-animation-delay: 200ms;
@@ -613,7 +643,6 @@ header .header {
 }
 .blockcards .textcards .name p {
   font-weight: 700;
-  font-size: small;
   padding-left: 15px;
   margin-bottom: 0;
   width: 200px;
@@ -691,27 +720,25 @@ header .header {
     opacity: 1;
   }
 }
-/* @keyframes slide {
-   0% {
-     transform: translateY(-1000px);
-     opacity: 0;
-   }
-   100% {
-     transform: translateY(0);
-     opacity: 1;
-   }
- }*/
 .commander {
   margin-top: 40px;
   display: flex;
   justify-content: center;
   background-color: #FF79DA;
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
   color: white;
+  box-shadow: 1px 2px 5px grey;
   border-radius: 25px;
   width: 50%;
   height: 40px;
   margin-left: 25%;
+}
+.commander span {
+  font-weight: 200;
+}
+.commander:hover {
+  background: linear-gradient(170deg, #fcb0e6, #b678fd);
+  box-shadow: 1px 3px 10px grey;
 }
 
 /*Footer*/
@@ -736,7 +763,7 @@ footer {
 }
 .proposer span {
   padding-left: 10px;
-  font-weight: 700;
+  font-weight: 200;
 }
 
 .partenaire {
@@ -749,7 +776,7 @@ footer {
 }
 .partenaire span {
   padding-left: 5px;
-  font-weight: 700;
+  font-weight: 200;
 }
 
 .mentions {
@@ -757,12 +784,14 @@ footer {
   margin-left: 20px;
   font-size: small;
   color: white;
-  font-weight: 700;
+}
+.mentions span {
+  font-weight: 200;
 }
 
 .contact a {
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
+  font-weight: 200;
   margin-top: 5px;
   margin-left: 20px;
   font-size: small;
@@ -829,7 +858,7 @@ footer {
   nav h2 {
     width: 100%;
     font-size: x-large;
-    padding-left: 70px;
+    padding-left: 170px;
   }
   nav .cards_accueil {
     width: 80%;
