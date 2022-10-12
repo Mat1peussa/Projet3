@@ -119,14 +119,22 @@ p {
 }
 
 @-webkit-keyframes spinner_invisible {
+  0% {
+    z-index: 1;
+  }
   100% {
     z-index: 0;
+    opacity: 0;
   }
 }
 
 @keyframes spinner_invisible {
+  0% {
+    z-index: 1;
+  }
   100% {
     z-index: 0;
+    opacity: 0;
   }
 }
 /*Page d'accueil*/
