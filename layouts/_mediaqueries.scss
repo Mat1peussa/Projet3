@@ -144,32 +144,7 @@
           margin-left: -88px;
          }
   
-         .entree{
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-            h2{
-              margin-top: -20px;
-              margin-right: 10px;
-            }
-         }
-         .plats{
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-            h2{
-              margin-top: -20px;
-              margin-right: 36px;
-            }
-         }
-         .desserts{
-          display: flex;
-          justify-content: space-around;
-            h2{
-              margin-top: -20px;
-            }
-         }
-         
+       
     }
   
     .blockcards{
@@ -181,6 +156,12 @@
             &:hover .price{
               transform: translateX(0);
             }
+            &:hover .name p{
+              overflow: initial;
+            }
+            &:hover .details_price .details p{
+              overflow: initial;
+            }
         }
     }
   
@@ -189,7 +170,7 @@
       display: flex;
       justify-content: center;
         p{
-          width: 100%;
+          width: 500px;
           display: flex;
           justify-content: center;
         }
@@ -232,3 +213,56 @@
       align-items: center;
     }
   }
+
+  
+
+  @media all and (min-width: 1500px ){
+
+    .block_menu{
+      .title{
+        justify-content: center;
+       }
+
+       .trait_dessous{
+        margin-top: 0px;
+        width: 300px;
+        margin-left: -88px;
+       }
+
+       .entree{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+          h2{
+            margin-top: -20px;
+            margin-right: 10px;
+          }
+       }
+       .plats{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+          h2{
+            margin-top: -20px;
+            margin-right: 36px;
+          }
+       }
+       .desserts{
+        display: flex;
+        justify-content: space-around;
+          h2{
+            margin-top: -20px;
+          }
+       }
+       
+    }
+
+    .blockcards{
+      .cards{
+        .greenbox{
+          width: 35px;
+        }
+      }
+    }
+  }
+  
